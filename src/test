@@ -1,0 +1,136 @@
+    // 클래스
+    // 클래스라는 것은 .java파일을 .class로 바꿀 때의 기준이 되는 그 영역이라고 할 수 있다.
+    // public은 제어자라고 생각하면된다. -> public (접근)제어자
+    // main 클래스 이 녀석을 어떻게 제어 할거냐?를 결정하는 놈이다.
+    // 어디까지 접근할거냐? 이런 뜻
+    // public(공공의, 공통의)
+
+public class Main {
+
+    // JDK 기능
+    // 1) compiler : .java -> .class //.java 파일이 .class파일로 컴파일될 것이다.
+    // 2) JRE
+    // 3) JDB : 디버깅
+    // 디버깅 : 버그를 없애기위해 면밀히 살펴보는 것
+
+    // () : 소괄호
+    // {} : 중괄호
+    // [] : 대괄호
+
+    // 메인클래스의 하위요소는 메소드라고 부르는데 소괄호 앞에 있는게 이름이다 main 메소드!
+    // 자바 프로젝트(앱)는, 제일 먼저 클래스의 main 메소드를 실행시킨다. => JVM의 약속이다!(우리가 만든게 아니고
+    // 자바만든얘가 만든거라 약속이니까 지켜줘야한다.
+    // 그래서 main 메소드를 맨!처음에 실행시켜주는것이다.
+    // 그래서 이 메인 메소드 안에서 다른 클래스를 불러오고, 다른 객체를 불러오고 이런 식으로 프로그램이 진행이 된다...!
+    // main 메소드
+
+    // static은 이 프로그램이 실행될 때 무조건 실행이 될 수 있는 상태가 된다.
+    // static : 이 프로그램이 시작될 때 무조건 실행되는 녀석임을 표현하기 위한 장치!!!!
+    // void : "아무것도 없다."라는 뜻으로 쓰임 -> 출력은 없다. 출력이 있다면 무조건 return ~~~해줘야한다.
+    // static (xxx) main 사이에 나오는 void 이 부분이 바로 출력의 데이터 타입이라고 할 수가 있다!! 즉,
+    // 메서드의 출력값의 데이터 타입
+
+    // input, output말할때 이곳이 input이다.
+    // (String[] args) : 매개변수 자리
+    // main( 이곳은 "매개변수"자리다 라고 말한다.!!)
+    // 그래서 이 main이라는 메서드를 호출할 때 input은 뭘로 할 거냐? 이 얘기고 String[]이거는 이 input의 타입은
+    // 뭘로 할거냐? 이 소리다. args는 변수명이다.
+    // 결국 중요한 것은 이곳이 (String[] args) input이고 void 이곳이 output이다!!!
+
+    // input에 대한 변수명이 args인데 변수명은 아무거나 써도 상관없다 ex) args11111도 가능
+    public static void main(String[] args) {
+        // 객체!
+        // 자바라는 언어는 이 세상과 비슷한 메커니즘을 가지고 가는 언어다
+        // 그래서 객체는 사물에 대해 표현하면 조금 좁고 모든 것을 표현하기 위한 개념이다!
+        // 객체 : 특징(속성, 변수) 행동(메소드)라고 표현함
+        System.out.print("Our First "); //이것이 객체다 그리고 행동을 정의한 줄이다.
+        // 보통 하위 요소를 표현할때 온점(.)을 표현한다.
+        System.out.print("Project! :)");
+
+        System.out.println("====================================");
+        // <미션>
+        // 1. 7 출력
+        // 2. 3 출력
+        // 3. 3.14 출력
+        // 4. JAVA 문자 출력
+        System.out.println(7);
+        System.out.println(3);
+        System.out.println(3.14);
+        System.out.println("JAVA");  //""이거 안쓰면 변수로 인식하기때문에 "" 로 감싸줘라! 숫자는 상관 노! "7" 이건 문자 7
+
+        // final int number = 10;
+        // true는 1
+        // false는 0
+
+        // String message = "Hello World";
+        // 참조형 변수!
+        // List<int> alphabet = [0, 1, 2, 3]; // 기본형 변수 여러개를 저장합니다.
+    }
+}
+
+
+=======================================================================================
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // 우리의 playground!다
+
+        // (1) boolean
+        // 변수를 선언해보자 => 타입 이름 = 값;
+//        boolean flag = true;
+//        boolean flag; // 선언했음
+//        flag = true; // 값을 할당해줬음
+
+        // (2) 문자형(char) 캐릭터
+//        char alphabet = 'A';  //""은 문자열로 기억한다 ''이렇게해야 문자형으로 기억한다.
+//        System.out.println(alphabet);
+
+        // (3) 정수형(byte, short, int, long)
+//        byte byteNumber = 127; // -128 ~ 127(1byte)
+//        short shortNumber = 32767; //  -32,768 ~ 32,767
+//        int intNumber = 2147483647;
+//        long longNumber = 2147483647L;
+
+        // (3) 실수형
+        // float(4byte), double(8byte)
+
+//       float floatNumber = 0.123F;
+//        double doubleNumber = 0.123123132; // 이렇게 할당했고
+//        // 이렇게 쓴다 => 쓴다는 거는 변수를 참조한다라고 우리가 표현하기도 한다.
+//        System.out.println(floatNumber);
+//        System.out.println(doubleNumber);
+
+
+        // <참조형>!!
+        // (1) 문자열 변수
+
+//        String helloWorld = "Hello World!";
+        // 변수를 가져다 쓰는걸 참조한다라고 한다.
+//        System.out.println(helloWorld);
+
+        // (2) 배열
+        // 참조형 데이터는 어떤 주소값을 저장한다
+        // 그래서 그 주소값이 출력이된다.
+        // 그래서 값을 출력하고 싶을때는 Arrays.toString(a)하면 된다.
+//        int[] a = {1, 2, 3};
+
+//        System.out.println(Arrays.toString(a));
+
+        // 래퍼 클래스(Wrapper Class 변수)
+        // 래퍼클래스는 박싱 / 언박싱 개념이 있다.
+        // 래퍼로 감싸면 박싱 풀르면 언박싱!
+
+        int number = 21;
+//        Integer num = new Integer(number)    //()여기 안에다가 감쌀 즉, 박싱할 기본형을 넣어준다
+                    // new라는 키워드로 래퍼클래스를 쓸거다라고 알려주는거다
+            // 이렇게 할것을 박싱이라고 한다 , 기본형 변수타입을 이렇게 래퍼 타입으로 감싸준것이다.
+            // 근데 new Integer(number)는 옛날 방식이다 그래서 에러가 난다.
+        Integer num = number; // 박싱
+
+        System.out.println(num.intValue()); // 언박싱
+    }
+}
+
+========================================================================================
